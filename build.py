@@ -1,6 +1,7 @@
 import os
 import subprocess
 from config import * 
+import glob
 
 def build_packages():
     for i in FILEMAP:
@@ -11,6 +12,8 @@ def build_packages():
         command = f'speccy resolve {i[1]} -o {DIRPATH}/build_packages/{filename}.yaml'
         print(command)
         output = subprocess.call(command.split(), shell=True, text=True)
+        print(glob.glob(f"{DIRPATH}/build_packages/*"))
+
 
 if __name__ == "__main__":
     print(DIRPATH)
