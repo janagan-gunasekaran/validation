@@ -49,6 +49,7 @@ jobs:
     - name: Build packages
       run: |
         python build.py
+        docker info --help
     - name: Test with pytest
       run: |
         pytest
