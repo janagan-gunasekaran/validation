@@ -49,7 +49,7 @@ jobs:
     - name: Build packages
       run: |
         mkdir build_packages
-        docker run --volume ${pwd}:/local wework/speccy resolve /local/contracts/personData/base.json -o /local/build_packages/base.yaml
+        docker run --rm -v ${pwd}:/local wework/speccy resolve /local/contracts/personData/base.json -o /local/build_packages/base.yaml
     - name: Test with pytest
       run: |
         pytest
