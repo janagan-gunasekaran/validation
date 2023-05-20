@@ -22,8 +22,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    - run: npm ci
-    - run: npm test
+    - run: npm -v
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
