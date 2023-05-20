@@ -1,0 +1,3 @@
+*.pytest_cache
+build_packages/*
+__pycache__

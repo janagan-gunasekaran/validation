@@ -1,0 +1,7 @@
+{
+    "$schema": "../contracts/personData/base.json",
+    "id": 17,
+    "name": "Jangan",
+    "age": 42
+
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://example.com/employee.schema.json",
+    "title": "Record of employee",
+    "description": "This document records the details of an employee",
+    "type": "object",
+    "properties": {
+        "id": {
+            "$ref": "#/$defs/number_type"
+        },
+        "name": {
+            "$ref": "#/$defs/string_type"
+        },
+        "age": {
+            "$ref": "#/$defs/number_type"
+        }
+    },
+    "required": [
+        "id" ,
+        "name",
+        "age"
+    ],
+    "$defs": {
+        "number_type": {
+           "$ref": "../common.json/#/number_type"
+        },
+        "string_type": {
+            "$ref": "../common.json/#/string_type"
+        }
+    }
+}

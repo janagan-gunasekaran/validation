@@ -1,0 +1,10 @@
+{
+    "number_type": {
+        "type": "number",
+        "minimum": 16
+    },
+    "string_type": {
+        "type": "string",
+        "minLength": 5
+    }
+}
