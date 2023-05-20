@@ -38,8 +38,8 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install speccy
       run: |
-        docker pull wework/speccy:dependabot-bundler-docs-nokogiri-1.13.6
-        docker run wework/speccy:dependabot-bundler-docs-nokogiri-1.13.6
+        docker pull wework/speccy:latest
+        docker run wework/speccy:latest
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names

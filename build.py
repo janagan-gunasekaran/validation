@@ -1,4 +1,5 @@
 import os
+import subprocess
 from config import * 
 
 def build_packages():
@@ -6,9 +7,8 @@ def build_packages():
         filename = os.path.basename(i[1]).split(".")[0]
         if not os.path.exists(f'{DIRPATH}/build_packages/'):
             os.makedirs(f'{DIRPATH}/build_packages/')
-        command = f'speccy resolve {i[1]} -o {DIRPATH}/build_packages/{filename}.yaml'
-        import subprocess
-        output = subprocess.run(command.split(), shell=True)
+        command = f'docker run wework/speccy speccy resolve {i[1]} -o {DIRPATH}/build_packages/{filename}.yaml'
+        subprocess.run(command.split(), shell=True)
 
 if __name__ == "__main__":
     build_packages()
