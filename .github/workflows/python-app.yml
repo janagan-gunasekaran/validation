@@ -50,6 +50,7 @@ jobs:
     - name: Build packages
       run: |
         python build.py
+        speccy resolve /home/runner/work/validation/validation/contracts/personData/base.json -o /home/runner/work/validation/validation/build_packages/base.yaml
     - name: Test with pytest
       run: |
         pytest

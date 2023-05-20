@@ -11,7 +11,7 @@ def build_packages():
         # command = f'docker run --volume {DIRPATH}:/local wework/speccy resolve /local{i[1]} -o /local/build_packages/{filename}.yaml'
         command = f'speccy resolve {i[1]} -o {DIRPATH}/build_packages/{filename}.yaml'
         print(command)
-        output = subprocess.call(command.split(), shell=True, text=True)
+        output = subprocess.run(command.split(), shell=True, text=True)
         print(output)
         print(glob.glob(f"{DIRPATH}/build_packages/*"))
 
