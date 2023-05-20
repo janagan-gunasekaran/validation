@@ -1,7 +1,7 @@
 import unittest
-from validate import get_schema, get_data, validate_json
+from ..validate import get_schema, get_data, validate_json
 import os
-from config import DIRPATH
+from ..config import DIRPATH
 
 class TestStringMethods(unittest.TestCase):
 
