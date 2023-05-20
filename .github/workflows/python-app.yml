@@ -38,6 +38,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install speccy
       run: |
+        npm install speccy -g
         docker pull wework/speccy:latest
         docker run wework/speccy:latest
     - name: Lint with flake8
@@ -48,8 +49,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Build packages
       run: |
-        mkdir build_packages
-        docker run --rm -v ${pwd}:/local wework/speccy resolve /local/contracts/personData/base.json -o /local/build_packages/base.yaml
+        speccy resolve
     - name: Test with pytest
       run: |
         pytest
