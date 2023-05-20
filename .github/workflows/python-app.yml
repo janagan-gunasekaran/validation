@@ -48,8 +48,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Build packages
       run: |
-        python build.py
-        docker info --help
+        mkdir build_packages
+        docker run --volume ${pwd}:/local wework/speccy resolve /local/contracts/personData/base.json -o /local/build_packages/base.yaml
     - name: Test with pytest
       run: |
         pytest
